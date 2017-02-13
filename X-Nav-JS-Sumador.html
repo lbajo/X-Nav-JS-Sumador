@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>Simple calculator</title>
+    <script type="text/javascript" charset="utf-8">
+      function adder (optag, restag) {
+        var operation = document.getElementById(optag);
+        var operands = operation.innerHTML.split ("+");
+        var result = document.getElementById(restag);
+        var resultData = parseInt(operands[0]) + parseInt(operands[1]);
+        result.innerHTML = "= " + resultData;
+      }
+      function newSum (optag) {
+        var operation = document.getElementById(optag);
+        operation.innerHTML = Math.round(Math.random()*100) + "+" +Math.round(Math.random()*100);
+      }
+    </script>
+   </head>
+    <body>
+      <p> 
+        <span id='optag'>5+3</span> <span id='result'></span> <a href="javascript:adder('optag', 'result')",> Sum!</a>
+      </p>
+      <p>
+        <a href="javascript:newSum('optag')"> One more!</a>
+      </p>
+    </body>
+</html>
